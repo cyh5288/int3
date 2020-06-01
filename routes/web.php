@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('test',function () {
+    phpinfo();
+});
+
+Route::get('bible/{book?}/{chapter?}', 'BibleController@index')->name('bible.index');
+Route::post('bible/search','BibleController@search')->name('bible.search');
